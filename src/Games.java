@@ -49,6 +49,27 @@ public class Games {
         }
         return userGuess == randomNumber;
     }
+    boolean riddles(){
+        String[] riddles =
+                {"The More That Is Here, The Less You Will See.",
+                        "If Given One, You'll Have Many Or None.",
+                        "I Cross The River Without Moving. What Am I?",
+                        "I Possess A Father And Mother, But Am No One's Son. Even With Siblings, I Am Brother To None.",
+                        "Time Existed Before Me, But History Can Only Begin After My Creation.",
+                        "Some Are Cherished, Some Are Hated, And Even If Lost, They Remain With You",};
 
+        String[] riddleAnswers = {
+                "darkness",
+                "a choice",
+                "a bridge",
+                "a daughter",
+                "writing book",
+                "memories"};
 
+        int i = (int)(Math.random()*riddles.length);
+        String randomRiddle  = riddles[i];
+        String randomRiddleAnswer = riddleAnswers[i];
+        String answer = sc.nextLine();
+        return randomRiddleAnswer.contains(answer);
+    }
 }

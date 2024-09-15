@@ -21,15 +21,14 @@ Scanner sc = new Scanner(System.in);
     void currentPlayerAttack(Role target) {
         if (alive && target.alive) {
             System.out.print(name + " is attacking " + target.name + "...");
-            sc.nextLine();
             if (playerType) {
-                int gameType = (int) (Math.random() * 2);
+                int gameType = (int) (Math.random() * 3);
 
-                if (gameType == 0) {
+                if (gameType == 0 || gameType == 1) {
                     Games rps = new Games();
                     String gameResult = rps.playRockPaperScissorsGame();
                     if (gameResult.equals("tie")) {
-                        System.out.print("Normal hit");
+                        System.out.print("Normal hit.");
                         sc.nextLine();
                         attackSuccess(target, attackDamage);
                     } else if (gameResult.equals("player one wins")) {
@@ -70,7 +69,7 @@ Scanner sc = new Scanner(System.in);
     void computerAttack(Role target){
         int randomNumber = (int) (Math.random()*5);
         if(randomNumber>= 0 && randomNumber <=2){
-            System.out.print("Normal hit ");
+            System.out.print("Normal hit, ");
             attackSuccess(target, attackDamage);
         }
         else if(randomNumber == 4){

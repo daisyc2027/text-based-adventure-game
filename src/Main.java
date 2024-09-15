@@ -9,15 +9,8 @@ public class Main {
         Role hero = new Role(username, 80, 15, true);
         Role opponent = new Role("Opponent", 100, 10, false);
 
-        while (hero.alive && opponent.alive){
-            hero.currentPlayerAttack(opponent);
-            opponent.currentPlayerAttack(hero);
-        }
-        if(!opponent.alive) {
-            System.out.println("You beat " + opponent.name + ".");
-        }
-        else{
-            System.out.println("Oh no, you died...");
-        }
+        Combat combat = new Combat();
+        combat.whoWon(hero, opponent);
     }
+
 }
